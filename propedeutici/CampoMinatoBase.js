@@ -32,7 +32,7 @@ for (let i = 1; i < 50; i++) {
 
 
     // Assegno lo stile
-    button.className = "bg-gray-200 w-[50px] h-[50px] border-3";
+    button.className = "bg-gray-300 w-[50px] h-[50px] border-3";
 
 
     // Aggiungo il button al container
@@ -42,7 +42,7 @@ for (let i = 1; i < 50; i++) {
     if (arrBombCasual.includes(i)) {
         //creo img tag
         const img = document.createElement("img");
-        img.src = "./img/bomb.jpeg";
+        img.src = "./img/bomb-removebg-preview.png";
         img.alt = "bomba";
 
 
