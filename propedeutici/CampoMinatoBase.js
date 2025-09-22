@@ -5,7 +5,7 @@ const container = document.getElementById("container-button");
 const arrBombCasual = []
 
 //10 posiizioni casuali per le bombe
-for (let b = 0; b < 10; b++) {
+for (let b = 0; b < 16; b++) {
     //faccio bombe casuali che vanno da 49 a 1
     const bombeCasualiTraRighe = Math.floor(Math.random() * (49 - 1) + 1)
 
@@ -47,22 +47,40 @@ for (let i = 1; i < 50; i++) {
         //assegno img bomb button
         button.appendChild(img)
 
+
     }
 
     //Evento button per numeri e bomba
     button.addEventListener("click", () => {
+        
+        //rimuovo colore e aggiungo altro
         button.classList.remove("bg-gray-400");
         button.classList.add("bg-gray-200");
 
         if (img) {
+            //setto img a block
             img.style.display = "block";
+
+            //creo h1 e stampo dentro
+            const h1 = document.createElement("h1");
+            h1.innerHTML = "Hai trovato una bomba";
+
+            // overlay a schermo intero con scritta centrata
+            h1.className = "overlay-bomba";
+
+            //metto h1 nel body
+            document.body.appendChild(h1);
+
+            // Reset totale ricaricando la pagina
+            setTimeout(() => {
+                location.reload();
+            }, 2000);
+
+            return
         }
 
     })
 
 
 }
-
-//arr bombe casuali
-console.log(arrBombCasual);
 
