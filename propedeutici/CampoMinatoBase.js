@@ -1,12 +1,8 @@
 // Prendo il container per inserire i button
 const container = document.getElementById("container-button");
 
-//arr di 7x7 = 49
-
-
 //faccio arr per incapsulare le bombe
 const arrBombCasual = []
-
 
 //10 posiizioni casuali per le bombe
 for (let b = 0; b < 10; b++) {
@@ -28,27 +24,43 @@ for (let b = 0; b < 10; b++) {
 for (let i = 1; i < 50; i++) {
 
     // Creo il button
-    var button = document.createElement("button");
+    const button = document.createElement("button");
 
 
     // Assegno lo stile
-    button.className = "bg-gray-300 w-[50px] h-[50px] border-3";
-
+    button.className = "bg-gray-400 w-[50px] h-[50px] border border-black";
+    button.style.cursor = "pointer"
 
     // Aggiungo il button al container
     container.appendChild(button);
 
+    let img = null
 
+    //verifico se nelle 10 bombe casuali includono uno dei 49 numeri se si metti img
     if (arrBombCasual.includes(i)) {
         //creo img tag
-        const img = document.createElement("img");
+        img = document.createElement("img");
         img.src = "./img/bomb-removebg-preview.png";
         img.alt = "bomba";
-
+        img.style.display = "none";
 
         //assegno img bomb button
         button.appendChild(img)
+
     }
+
+    //Evento button per numeri e bomba
+    button.addEventListener("click", () => {
+        button.classList.remove("bg-gray-400");
+        button.classList.add("bg-gray-200");
+
+        if (img) {
+            img.style.display = "block";
+        }
+
+    })
+
+
 }
 
 //arr bombe casuali
