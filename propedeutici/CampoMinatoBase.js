@@ -34,7 +34,11 @@ for (let i = 1; i < 50; i++) {
     // Aggiungo il button al container
     container.appendChild(button);
 
+    //per img
     let img = null
+
+    //per numeri
+    let num = null
 
     //verifico se nelle 10 bombe casuali includono uno dei 49 numeri se si metti img
     if (arrBombCasual.includes(i)) {
@@ -42,17 +46,25 @@ for (let i = 1; i < 50; i++) {
         img = document.createElement("img");
         img.src = "./img/bomb-removebg-preview.png";
         img.alt = "bomba";
-        img.style.display = "none";
+        // img.style.display = "none";
 
         //assegno img bomb button
         button.appendChild(img)
 
 
+    } else {
+        //creo tag
+        num = document.createElement('p')
+
+        num.innerHTML = 0
+
+        button.appendChild(num)
     }
+
 
     //Evento button per numeri e bomba
     button.addEventListener("click", () => {
-        
+
         //rimuovo colore e aggiungo altro
         button.classList.remove("bg-gray-400");
         button.classList.add("bg-gray-200");
@@ -78,6 +90,10 @@ for (let i = 1; i < 50; i++) {
 
             return
         }
+
+        // if(i !== arrBombCasual &&){
+
+        // }
 
     })
 

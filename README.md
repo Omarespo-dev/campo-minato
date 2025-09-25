@@ -8,22 +8,22 @@ L'obiettivo è scoprire tutte le celle evitando di cliccare sulle bombe nascoste
 
 ## 🎮 Funzionalità di Base
 
-* Presenta una griglia di gioco **7x7 (49 celle)**.
+* Presenta una griglia di gioco **7x7 (49 celle)**.✅
 * L’utente può:
 
-  * **Cliccare sulle celle** per scoprirle.
+  * **Cliccare sulle celle** per scoprirle.✅
   * **Vedere il punteggio** durante la partita.
-  * **Ricevere feedback** quando colpisce una bomba.
+  * **Ricevere feedback** quando colpisce una bomba.✅
 
 ---
 
 ## ⚠️ Note Importanti
 
-* Le bombe sono **16** e vengono generate **casualmente** all’inizio del gioco.
-* Nessuna bomba può essere duplicata nella generazione.
+* Le bombe sono **16** e vengono generate **casualmente** all’inizio del gioco.✅
+* Nessuna bomba può essere duplicata nella generazione.✅
 * La partita termina quando:
 
-  * Il giocatore clicca su una bomba (💥 Game Over).
+  * Il giocatore clicca su una bomba (💥 Game Over).✅
   * Oppure quando raggiunge il punteggio massimo (🎉 Vittoria).
 
 ---
