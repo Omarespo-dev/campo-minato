@@ -1,5 +1,7 @@
 // Prendo il container per inserire i button
 const container = document.getElementById("container-button");
+const containerPunteggio = document.getElementById("container-punteggio")
+
 
 //faccio arr per incapsulare le bombe
 const arrBombCasual = []
@@ -18,6 +20,8 @@ for (let b = 0; b < 16; b++) {
 
 }
 
+//punteggio totale
+let punteggioTotale = 0
 
 
 // Ciclo per aggiungere btn + condizione per verifica se in arrbomcasual che sarebbero le 10 posizioni casuali includono gia la length della rr
@@ -36,9 +40,10 @@ for (let i = 1; i < 50; i++) {
 
     //per img
     let img = null
+    //counter
+    let counterIndex = 0
 
-    //per numeri
-    let num = null
+
 
     //verifico se nelle 10 bombe casuali includono uno dei 49 numeri se si metti img
     if (arrBombCasual.includes(i)) {
@@ -53,21 +58,31 @@ for (let i = 1; i < 50; i++) {
 
 
     } else {
-        //creo tag
-        num = document.createElement('p')
 
-        num.innerHTML = 0
+        // if(arrBombCasual.includes(i)){
+        //     counterIndex ++
+        // }
 
-        button.appendChild(num)
+        // button.innerHTML = counterIndex
     }
+
+
+
 
 
     //Evento button per numeri e bomba
     button.addEventListener("click", () => {
 
+        if (button.classList.contains("bg-gray-200")) {
+            return
+        }
+
         //rimuovo colore e aggiungo altro
         button.classList.remove("bg-gray-400");
         button.classList.add("bg-gray-200");
+
+
+
 
         if (img) {
             //setto img a block
@@ -89,14 +104,18 @@ for (let i = 1; i < 50; i++) {
             }, 2000);
 
             return
+        } else {
+            punteggioTotale++
         }
 
-        // if(i !== arrBombCasual &&){
+        //creo tag
+        const p = document.getElementById("p-set")
+        p.innerHTML = punteggioTotale
 
-        // }
 
     })
 
 
 }
+
 
