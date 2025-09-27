@@ -12,7 +12,7 @@ L'obiettivo è scoprire tutte le celle evitando di cliccare sulle bombe nascoste
 * L’utente può:
 
   * **Cliccare sulle celle** per scoprirle.✅
-  * **Vedere il punteggio** durante la partita.
+  * **Vedere il punteggio** durante la partita.✅
   * **Ricevere feedback** quando colpisce una bomba.✅
 
 ---
@@ -24,15 +24,15 @@ L'obiettivo è scoprire tutte le celle evitando di cliccare sulle bombe nascoste
 * La partita termina quando:
 
   * Il giocatore clicca su una bomba (💥 Game Over).✅
-  * Oppure quando raggiunge il punteggio massimo (🎉 Vittoria).
+  * Oppure quando raggiunge il punteggio massimo (🎉 Vittoria).✅
 
 ---
 
 ## 🚀 Bonus 1 - Game Over Avanzato
 
 * Mostra **tutte le bombe** quando perdi.
-* Impedisce il click sulle celle dopo la fine del gioco.
-* Mostra un messaggio appropriato (**vittoria** o **sconfitta**).
+* Impedisce il click sulle celle dopo la fine del gioco.✅
+* Mostra un messaggio appropriato (**vittoria** o **sconfitta**).✅
 
 ---
 

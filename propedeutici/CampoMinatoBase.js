@@ -40,8 +40,6 @@ for (let i = 1; i < 50; i++) {
 
     //per img
     let img = null
-    //counter
-    let counterIndex = 0
 
 
 
@@ -51,28 +49,24 @@ for (let i = 1; i < 50; i++) {
         img = document.createElement("img");
         img.src = "./img/bomb-removebg-preview.png";
         img.alt = "bomba";
-        // img.style.display = "none";
+        img.style.display = "none";
 
         //assegno img bomb button
         button.appendChild(img)
 
-
-    } else {
-
-        // if(arrBombCasual.includes(i)){
-        //     counterIndex ++
-        // }
-
-        // button.innerHTML = counterIndex
     }
 
 
+    //creo tag
+    let p = document.getElementById("p-set")
+    p.innerHTML = punteggioTotale
 
 
 
     //Evento button per numeri e bomba
     button.addEventListener("click", () => {
 
+        //verifico se c e quella classe cosi non clicco il button
         if (button.classList.contains("bg-gray-200")) {
             return
         }
@@ -84,13 +78,18 @@ for (let i = 1; i < 50; i++) {
 
 
 
-        if (img) {
-            //setto img a block
-            img.style.display = "block";
+        if (arrBombCasual.includes(i)) {
+            // MOSTRA TUTTE LE BOMBE
+            arrBombCasual.forEach(bombIndex => {
+                const bombButton = container.children[bombIndex - 1]; // -1 perché i tuoi bottoni partono da 1
+                const bombImg = bombButton.querySelector("img");
+                if (bombImg) bombImg.style.display = "block";
+            });
 
+            
             //creo h1 e stampo dentro
             const h1 = document.createElement("h1");
-            h1.innerHTML = "Hai trovato una bomba";
+            h1.innerHTML = "Hai trovato una bomba :(";
 
             // overlay a schermo intero con scritta centrata
             h1.className = "overlay-bomba";
@@ -103,15 +102,34 @@ for (let i = 1; i < 50; i++) {
                 location.reload();
             }, 2000);
 
-            return
         } else {
             punteggioTotale++
+            //creo tag
+            let p = document.getElementById("p-set")
+            p.innerHTML = punteggioTotale
+
         }
 
-        //creo tag
-        const p = document.getElementById("p-set")
-        p.innerHTML = punteggioTotale
 
+        //condizione sei punteggio totale e 30 esce overlay hai vinto
+        if (punteggioTotale == 30) {
+            //creo h1 e stampo dentro
+            const h1 = document.createElement("h1");
+            h1.innerHTML = "Hai Vintoo!!!";
+
+            // overlay a schermo intero con scritta centrata
+            h1.className = "overlay-bomba-green";
+
+            //metto h1 nel body
+            document.body.appendChild(h1);
+
+            // Reset totale ricaricando la pagina
+            setTimeout(() => {
+                location.reload();
+            }, 2000);
+
+
+        }
 
     })
 
